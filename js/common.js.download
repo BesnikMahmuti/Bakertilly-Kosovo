@@ -1,0 +1,48 @@
+jQuery(function() {
+  initSkickyHeader();
+  initLangDrop();
+  showPassword();
+  menuDropHover();
+  menuMobile();
+  initSearchContainer();
+  cookieMsg();
+  openClose('.list', 'h2', '.open-close-holder');
+  openClose('.open-close-drop', '.open-btn', '.service-list-holder');
+
+  $('#scroll-element').simplebar();
+  $(".chosen-select").chosen();
+
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    autoHeight: true,
+    autoplay: 7000,
+    loop: true,
+    keyboard: {
+    	enabled: true,
+    },
+    autoplay: {
+	    delay: 7000,
+	    disableOnInteraction: true,
+	  },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+	$(".swiper-container").hover(function() {
+		swiper.autoplay.stop();
+	}, function() {
+	    swiper.autoplay.start();
+	});
+
+  var $xmpl = $('.holder');
+    $xmpl.dotdotdot({
+  });
+  
+});
